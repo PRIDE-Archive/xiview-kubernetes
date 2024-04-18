@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backup-check-pod
+spec:
+  containers:
+  - name: backup-check-container
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "ls -l /backup && sleep 3000"]
+    volumeMounts:
+    - name: backup-volume
+      mountPath: /backup
+  volumes:
+    - name: backup-volume
+      persistentVolumeClaim:
+        claimName: postgres-backup-pvc

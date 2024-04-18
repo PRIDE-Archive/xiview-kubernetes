@@ -1,0 +1,23 @@
+#
+global:
+  storageClass: "cinder-nova"
+  postgresql:
+    auth:
+      username: "postgres"
+      postgresPassword: "passwordhere"
+  persistence:
+##    storageClass: "cinder-nova"
+#    ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
+#    ##
+    accessModes:
+      - ReadWriteOnce
+#    ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
+#    ##
+    size: 100Gi
+#    ## @param primary.persistence.annotations Annotations for the PVC
+#    ##
+#
+volumePermissions:
+#  ## @param volumePermissions.enabled Enable init container that changes the owner and group of the persistent volume
+#  ##
+  enabled: true

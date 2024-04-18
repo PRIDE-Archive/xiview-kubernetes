@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: cinder-nova
+provisioner: cinder.csi.openstack.org
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+parameters:
+  availability: nova

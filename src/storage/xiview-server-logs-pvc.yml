@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: xiview-server-logs-pvc
+spec:
+  storageClassName: cinder-nova
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi

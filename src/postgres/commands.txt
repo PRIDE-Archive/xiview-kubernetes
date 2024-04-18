@@ -1,0 +1,2 @@
+$ helm install postgresql bitnami/postgresql -f values.yml
+$ kubectl logs -f postgresql-0
